@@ -1,0 +1,5 @@
+pip3 install django==1.11.29
+django-admin startproject ecommerce . 
+python3 manage.py runserver
+
+gp open /home/gitpod/.bashrc
