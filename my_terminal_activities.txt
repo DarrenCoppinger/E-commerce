@@ -72,3 +72,6 @@ pip3 freeze > requirements.txt
 git add .
 
 git push
+
+
+pip3 install gunicorn #connect to heroku
