@@ -2,4 +2,69 @@ pip3 install django==1.11.29
 django-admin startproject ecommerce . 
 python3 manage.py runserver
 
-gp open /home/gitpod/.bashrc
+gp open /home/gitpod/.bashrc #check aliases
+
+#alias run="python3 $GITPOD_REPO_ROOT/manage.py runserver 0.0.0.0:8000"
+#alias python=python3
+#alias pip=pip3
+
+
+python3 manage.py makemigrations #no changes detected
+
+python3 manage.py makemigrations accounts #no changes detected
+
+pip3 install django-forms-bootstrap
+
+python3 manage.py createsuperuser
+
+python3 manage.py startapp home #create new app
+
+python3 manage.py startapp products #create new app products
+
+pip3 install Pillow
+
+python3 manage.py makemigrations products #migrate models from app to full app
+
+python3 manage.py migrate products #creates table in the database
+
+python3 manage.py test products #test 
+
+python3 manage.py startapp cart #create shopping cart app
+
+python3 manage.py makemigrations cart #context rather than model so no migrations to make
+
+python3 manage.py migrate cart #no migrations to apply
+
+
+python3 manage.py start search #create app called search
+
+python3 manage.py startapp checkout
+
+python3 manage.py makemigrations checkout #
+
+python3 manage.py migrate checkout #creates tables within database
+
+pip3 install stripe #install stripe module
+pip3 install --upgrade stripe #due to issues had to input this line
+
+
+pip3 install dj-database-url
+
+pip3 install psycopg2 #connects to postgres databases
+
+pip3 freeze > requirements.txt
+
+python3 manage.py migrate     #to migrate all exisiting migrations to the new postgres database
+
+python3 manage.py createsuperuser   #create super user on new postgres database
+
+pip3 install django-storages  #allow app to interact with aws s3 bucket
+
+pip3 install boto3 #allow app to interact with aws s3 bucket
+
+python3 manage.py collectstatic #first time this migrates the createsuperuser
+
+python3 manage.py collectstatic 
+#second time this is after the custom_storages.py file is created which stores all static files in a static folder within the S3 bucket
+
+pip3 freeze > requirements.txt
