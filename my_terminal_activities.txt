@@ -68,3 +68,7 @@ python3 manage.py collectstatic
 #second time this is after the custom_storages.py file is created which stores all static files in a static folder within the S3 bucket
 
 pip3 freeze > requirements.txt
+
+git add .
+
+git push
